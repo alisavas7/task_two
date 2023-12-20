@@ -1,4 +1,5 @@
 const img_src = sessionStorage.getItem('image_source');
+console.log(document.querySelector("[data-testid=image-file-input]"));
 if (img_src) {
   const img = document.createElement('img');
   img.setAttribute('data-testid', 'value-image-image');
