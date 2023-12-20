@@ -1,4 +1,4 @@
-import domtoimage from "https://github.com/tsayen/dom-to-image/blob/master/src/dom-to-image.js";
+import domtoimage from "https://github.com/1904labs/dom-to-image-more/blob/main/src/dom-to-image-more.js";
 
 const run = document.querySelector("[data-testid=input-form]");
 
