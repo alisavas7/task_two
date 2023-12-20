@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>AdCreative.ai</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="main_style.css" rel="stylesheet">
+        <link href="flyer_css.css" rel="stylesheet">
+        <script src="hex_map.js"></script>
+        <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+    </head>
+    <body class="font-sans overflow-y-scroll smoothed flex min-h-screen flex-col">
+        <main class="layout-main flex-main">
+            <div class="input-output-grid">
+                <div class="flex flex-col md:flex-row">
+                    <div class="input-col relative md:flex-1 pb-4 min-w-0">
+                        <div id=":rm:" role="tabpanel" aria-labelledby="form" class="r8-tabs__content py-4" tabindex="0">
+                            <form data-testid="input-form" id="input-form">
+                                <!-- generated flyer -->
+                                <div class="mb-3" data-testid="flyer-banner"></div>
+                                <!--<script src="load.js"></script>-->
+                                <!-- logo .png -->
+                                <div class="py-2.5" data-testid="logo">
+                                    <div class="flex flex-col gap-2 group" data-disabled="false">
+                                        <div class="flex items-center">
+                                            <div class="flex items-center">
+                                                <label class="text-r8-base font-mono" for="logo">
+                                                    <div class="flex items-center gap-1.5" translate="no">Logo</div>
+                                                </label>
+                                                <span class="text-r8-red-10">*</span>
+                                                <span class="ml-1.5 font-sans text-r8-sm text-r8-gray-10">file</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col gap-1">
+                                            <div role="presentation" tabindex="0" class="bg-r8-gray-2 p-4 border border-r8-gray-7 border-dashed hover:border-r8-gray-9 cursor-pointer">
+                                                <input type="file" tabindex="-1" id="logo" style="display: none;">
+                                                <p id="file-input" class="text-r8-sm text-r8-gray-11 flex items-center gap-2 select-none">Drop a file or click to upload</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- color hex code -->
+                                <div class="py-2.5" data-testid="hex-code">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center">
+                                                <label class="text-r8-base font-mono" for="color">
+                                                    <div class="flex items-center gap-1.5" translate="no">Color</div>
+                                                </label>
+                                                <span class="text-r8-red-10">*</span>
+                                                <span class="ml-1.5 font-sans text-r8-sm text-r8-gray-10">hex code</span>
+                                                <a href="https://htmlcolorcodes.com/color-names/" class="ml-1.5 font-sans text-r8-sm text-r8-gray-10">(supported hex codes)</a>
+                                            </div>
+                                        </div>
+                                        <textarea id="color" dir="auto" class="border p-2 border-black resize-none" name="color" style="height: 42px !important;">-- Enter a hex code --</textarea>
+                                    </div>
+                                </div>
+                                <!-- punchline text -->
+                                <div class="py-2.5" data-testid="punchline">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center">
+                                                <label class="text-r8-base font-mono" for="punchline">
+                                                    <div class="flex items-center gap-1.5" translate="no">Punchline</div>
+                                                </label>
+                                                <span class="text-r8-red-10">*</span>
+                                                <span class="ml-1.5 font-sans text-r8-sm text-r8-gray-10">string</span>
+                                            </div>
+                                        </div>
+                                        <textarea id="punchline" dir="auto" class="border p-2 border-black resize-none" name="punchline" style="height: 42px !important;">-- Enter a punchline --</textarea>
+                                    </div>
+                                </div>
+                                <!-- button text -->
+                                <div class="py2.5" data-testid="button-text">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex flex-col gap-1">
+                                            <div class="flex items-center">
+                                                <label class="text-r8-base font-mono" for="button-text">
+                                                    <div class="flex items-center gap-1.5" translate="no">Button text</div>
+                                                </label>
+                                                <span class="text-r8-red-10">*</span>
+                                                <span class="ml-1.5 font-sans text-r8-sm text-r8-gray-10">string</span>
+                                            </div>
+                                        </div>
+                                        <textarea id="button-text" dir="auto" class="border p-2 border-black resize-none" name="button-text" style="height: 42px !important;">-- Enter a button text --</textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Reset/Run Buttons-->
+                        <div class="sticky bottom-0 bg-white">
+                            <div class="flex items-center justify-end gap-2 py-4 border-t border-r8-gray-6">
+                                <button data-command="reset" type="button" class="r8-btn r8-btn--outlined r8-btn--primary r8-btn--md">
+                                    <span>Reset</span>
+                                </button>
+                                <button data-command="run" type="submit" form="input-form" class="r8-btn r8-btn--filled r8-btn--primary r8-btn--md">
+                                    <span>Run</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!---------------------->
+                        <!-- scripts to run ---->
+                        <script src="interact_second.js"></script>
+                        <script src="run_second.js"></script>
+                        <script src="drop.js"></script>
+                    </div>
+                </div>
+            </div>
+            <div style="position: fixed; z-index: 9999; inset: 16px; pointer-events: none;"></div>
+        </main>
+    </body>
+</html>

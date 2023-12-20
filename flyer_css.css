@@ -1,0 +1,40 @@
+.button-text {
+    text-align: center;
+    font-family: Calibri;
+    color: white;
+}
+
+.logo-outside {
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+}
+
+.logo-inside {
+    width:100px;
+    height:100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.gen-image-outside {
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin: auto;
+    display: block;
+}
+
+.gen-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 25%; 
+}
+
+.top-banner {
+    border: 2px solid red;
+}
+
+.bottom-banner {
+    border: 2px solid red;
+}
