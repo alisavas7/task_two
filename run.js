@@ -1,5 +1,3 @@
-import domtoimage from "https://github.com/1904labs/dom-to-image-more/blob/main/src/dom-to-image-more.js";
-
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run ( event ){
@@ -78,12 +76,15 @@ function on_run ( event ){
         if (flyer) {
             flyer.remove();
         }
-        generate_flyer(...arguments, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
+        const image_url = sessionStorage.getItem('image_source');
+        if (image_url) {
+            generate_flyer(image_url, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
+        }
     }
 
 }
 
-function generate_flyer (image_url = 'tesla-model.png', logo_url, hex_code, punchline, button_text) {
+function generate_flyer (image_url, logo_url, hex_code, punchline, button_text) {
     const flyer_banner = document.querySelector("[data-testid=flyer-banner]");
     const flyer = document.createElement('div');
     const head = document.getElementsByTagName("head")[0];
