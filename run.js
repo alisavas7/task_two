@@ -1,3 +1,5 @@
+import domtoimage from "https://www.jsdelivr.com/package/npm/dom-to-image";
+
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run ( event ){
