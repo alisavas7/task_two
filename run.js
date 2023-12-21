@@ -77,10 +77,8 @@ function on_run ( event ){
         if (flyer) {
             flyer.remove();
         }
-        const image_url = sessionStorage.getItem('image_source');
-        if (image_url) {
-            generate_flyer(image_url, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
-        }
+        //const image_url = sessionStorage.getItem('image_source');
+        generate_flyer(image_url, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
     }
 
 }
@@ -154,8 +152,6 @@ function generate_flyer (image_url, logo_url, hex_code, punchline, button_text) 
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
-
-    
 }
 
 function raise_error(message, name) {
