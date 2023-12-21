@@ -1,3 +1,4 @@
+import { toPng, toSvg } from 'html-to-image';
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run ( event ){
@@ -153,6 +154,8 @@ function generate_flyer (image_url, logo_url, hex_code, punchline, button_text) 
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
+
+    
 }
 
 function raise_error(message, name) {
