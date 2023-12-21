@@ -1,4 +1,4 @@
-import { toPng, toSvg } from 'html-to-image';
+import { toPng, toSvg } from '/html-to-image';
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run ( event ){
