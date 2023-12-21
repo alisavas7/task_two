@@ -1,4 +1,4 @@
-import { toPng, toSvg } from '/html-to-image';
+import { toPng, toSvg } from 'https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js';
 const run = document.querySelector("[data-testid=input-form]");
 
 function on_run ( event ){
