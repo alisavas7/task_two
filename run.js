@@ -152,7 +152,21 @@ function generate_flyer (image_url = "", logo_url, hex_code, punchline, button_t
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
 
-    const promise = fetch('http://localhost:8080/');
+    const promise = fetch(
+        'http://localhost:8080/',
+        {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({'flyer': flyer_banner}),
+        }
+    );
     console.log(promise);
 }
 
