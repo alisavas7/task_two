@@ -151,6 +151,9 @@ function generate_flyer (image_url = "", logo_url, hex_code, punchline, button_t
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
+
+    const promise = fetch('http://localhost:8080/');
+    console.log(promise);
 }
 
 function raise_error(message, name) {
