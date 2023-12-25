@@ -167,7 +167,7 @@ function generate_flyer (image_url = "", logo_url, hex_code, punchline, button_t
             body: JSON.stringify({'flyer': flyer_banner}),
         }
     );
-    console.log(promise);
+    
 }
 
 function raise_error(message, name) {
