@@ -1,5 +1,5 @@
 const run = document.querySelector("[data-testid=input-form]");
-const img_url = URL.createObjectURL("https://replicate.delivery/pbxt/HtKMvJSvuGWDn2B35mM396QGzcrgCNkcgSko8JxtXux4aX9H/sketch-mountains-input.jpeg");
+const img_url = encodeURIComponent("https://replicate.delivery/pbxt/HtKMvJSvuGWDn2B35mM396QGzcrgCNkcgSko8JxtXux4aX9H/sketch-mountains-input.jpeg");
 
 function on_run ( event ){
     event.preventDefault();
