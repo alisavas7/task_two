@@ -1,5 +1,5 @@
 const run = document.querySelector("[data-testid=input-form]");
-const img_url = encodeURIComponent("https://replicate.delivery/pbxt/HtKMvJSvuGWDn2B35mM396QGzcrgCNkcgSko8JxtXux4aX9H/sketch-mountains-input.jpeg");
+const img_url = new URL("https://replicate.delivery/pbxt/HtKMvJSvuGWDn2B35mM396QGzcrgCNkcgSko8JxtXux4aX9H/sketch-mountains-input.jpeg");
 
 function on_run ( event ){
     event.preventDefault();
@@ -84,6 +84,7 @@ function on_run ( event ){
 }
 
 function generate_flyer (image_url = img_url, logo_url, hex_code, punchline, button_text) {
+    console.log(image_url);
     const flyer_banner = document.querySelector("[data-testid=flyer-banner]");
     const flyer = document.createElement('div');
     const head = document.getElementsByTagName("head")[0];
