@@ -161,7 +161,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         mode: 'no-cors'
     };
     const f = fetch(api, method);
-    f.then(response => response.text()).then(data => console.log(data));
+    f.then(response => response.text()).then(response => console.log(response));
     console.log(f);
 
     /*const promise = fetch(
