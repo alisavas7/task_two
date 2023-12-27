@@ -78,12 +78,15 @@ function on_run ( event ){
             flyer.remove();
         }
         //const image_url = sessionStorage.getItem('image_source');
+        
         generate_flyer(...arguments, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
     }
 
 }
 
 function generate_flyer (image_url = img_url, logo_url, hex_code, punchline, button_text) {
+    console.log(img_url);
+    console.log(logo_url);
     const flyer_banner = document.querySelector("[data-testid=flyer-banner]");
     const flyer = document.createElement('div');
     const head = document.getElementsByTagName("head")[0];
