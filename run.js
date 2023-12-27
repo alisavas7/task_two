@@ -162,7 +162,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
             'content-type': 'application/json', 
         },
         body: {
-            'flyer': flyer-banner
+            'flyer': flyer_banner
         }
     };
     const f = fetch(api, method);
