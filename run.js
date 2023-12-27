@@ -78,12 +78,12 @@ function on_run ( event ){
             flyer.remove();
         }
         //const image_url = sessionStorage.getItem('image_source');
-        generate_flyer(...arguments, URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
+        generate_flyer(URL.createObjectURL(file), hex_code.value, punchline.value, button_text.value);
     }
 
 }
 
-function generate_flyer (image_url = img_url, logo_url, hex_code, punchline, button_text) {
+function generate_flyer (logo_url, hex_code, punchline, button_text, image_url = img_url) {
     console.log(image_url);
     const flyer_banner = document.querySelector("[data-testid=flyer-banner]");
     const flyer = document.createElement('div');
