@@ -154,9 +154,29 @@ function generate_flyer (image_url = "", logo_url, hex_code, punchline, button_t
 
     /* API request */
     const api = 'http://localhost:8080/';
-    fetch(api)
+    const method = {
+        method: 'POST',
+        mode: 'no-cors'
+    };
+    fetch(api, method)
     .then(response => response.text())
     .then(text => console.log(text));
+
+    /*const promise = fetch(
+        'http://localhost:8080/',
+        {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify({'flyer': flyer_banner}),
+        }
+    );*/
     
 }
 
