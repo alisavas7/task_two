@@ -160,9 +160,9 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         method: 'POST',
         mode: 'no-cors'
     };
-    fetch(api, method)
-    .then(response => response.text())
-    .then(data => console.log(data));
+    const f = fetch(api, method);
+    f.then(response => response.text()).then(data => console.log(data));
+    console.log(f);
 
     /*const promise = fetch(
         'http://localhost:8080/',
