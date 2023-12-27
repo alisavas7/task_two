@@ -162,7 +162,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
     };
     fetch(api, method)
     .then(response => response.text())
-    .then(text => console.log(text));
+    .then(data => console.log(data));
 
     /*const promise = fetch(
         'http://localhost:8080/',
