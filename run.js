@@ -157,10 +157,16 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
     const api = 'http://localhost:8080/';
     const method = {
         method: 'POST',
-        mode: 'no-cors'
+        mode: 'no-cors',
+        headers: {
+            'content-type': 'application/json', 
+        },
+        body: {
+            'flyer': flyer-banner
+        }
     };
     const f = fetch(api, method);
-    f.then(response => response.text()).then(response => console.log(response));
+    f.then(response => response.json()).then(response => console.log(response));
 
     /*const promise = fetch(
         'http://localhost:8080/',
