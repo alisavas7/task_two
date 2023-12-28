@@ -159,7 +159,8 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         method: 'POST',
         mode: 'no-cors',
         headers: {
-            'content-type': 'application/json', 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : '*'
         },
         body: {
             'flyer': flyer_banner
