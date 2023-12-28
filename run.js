@@ -165,15 +165,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
             'flyer': flyer_banner
         }
     };
-    const f = fetch(api, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					name: 'John Doe'
-				})
-			});
+    const f = fetch(api, method);
     console.log(method.body.flyer);
     
     /*const promise = fetch(
