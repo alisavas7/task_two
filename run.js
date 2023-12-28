@@ -155,7 +155,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
 
     /* API request */
     const api = 'http://localhost:8080/html-to-image';
-    const method = {
+    const options = {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -166,8 +166,8 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
             'flyer': flyer_banner
         }
     };
-    const f = fetch(api, method);
-    console.log(method.body.flyer);
+    const request = Request(api, options);
+    console.log(request);
     
     /*const promise = fetch(
         'http://localhost:8080/',
