@@ -1,5 +1,5 @@
 const run = document.querySelector("[data-testid=input-form]");
-const img_url = new URL("https://replicate.delivery/pbxt/HtKMvJSvuGWDn2B35mM396QGzcrgCNkcgSko8JxtXux4aX9H/sketch-mountains-input.jpeg");
+const img_url = new URL("https://s3-prod-europe.autonews.com/s3fs-public/styles/800x600/public/Tesla-Model%20S%20PLAID%20web.jpg");
 
 function on_run ( event ){
     event.preventDefault();
@@ -155,35 +155,6 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
 
     /* API request */
     const api = 'http://localhost:8080/html-to-image';
-    const options = {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin' : '*'
-        },
-        body: {
-            'flyer': flyer_banner
-        }
-    };
-    const request = Request(api, options);
-    console.log(request);
-    
-    /*const promise = fetch(
-        'http://localhost:8080/',
-        {
-            method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            body: JSON.stringify({'flyer': flyer_banner}),
-        }
-    );*/
     
 }
 
