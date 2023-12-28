@@ -161,9 +161,9 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         headers: {
             'content-type': 'application/json', 
         },
-        body: {
+        body: JSON.parse({
             'flyer': flyer_banner
-        }
+        })
     };
     const f = fetch(api, method);
     f.then(response => response.json()).then(response => console.log(response));
