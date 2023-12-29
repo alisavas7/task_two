@@ -154,7 +154,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     flyer_banner.appendChild(flyer);
 
     /* API request */
-    const api = 'http://localhost:8080';
+    const api = 'http://localhost:8080/';
     const options = {
         method: 'POST',
         mode: 'no-cors',
@@ -167,7 +167,21 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'flyer' : flyer_banner
         }
     }
-    const response = await fetch(api, options);
+    fetch(api, options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Process the retrieved data
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('There was a problem fetching the data:', error);
+      });
+
 }
 
 function raise_error(message, name) {
