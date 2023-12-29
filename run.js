@@ -168,6 +168,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         }
     }
     const response = await fetch(api, options);
+    console.log(response);
 }
 
 function raise_error(message, name) {
