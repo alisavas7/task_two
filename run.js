@@ -83,7 +83,7 @@ function on_run ( event ){
 
 }
 
-function generate_flyer (logo_url, hex_code, punchline, button_text, image_url = img_url) {
+async function generate_flyer (logo_url, hex_code, punchline, button_text, image_url = img_url) {
     const flyer_banner = document.querySelector("[data-testid=flyer-banner]");
     const flyer = document.createElement('div');
     const head = document.getElementsByTagName("head")[0];
