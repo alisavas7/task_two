@@ -161,7 +161,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
             'Content-Type': 'application/type'
         },
         body: {
-            flyer = flyer_banner
+            flyer : flyer_banner
         }
     }
     const fetched = fetch(api, options);
