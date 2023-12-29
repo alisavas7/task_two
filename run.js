@@ -167,8 +167,21 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
             'flyer' : flyer_banner
         }
     }
-    const response = await fetch(api, options);
-    console.log(response);
+    const response = await fetch(
+            'http://localhost:8080/html-to-image',
+            {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'content-type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': true
+            },
+            body: {
+                'flyer' : flyer_banner
+            }
+        }
+    );
 }
 
 function raise_error(message, name) {
