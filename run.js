@@ -166,7 +166,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true
         },
-        body: JSON.stringify(data_body);
+        body: JSON.stringify(data_body)
     }
 
     fetch(api, options)
