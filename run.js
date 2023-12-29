@@ -169,7 +169,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         body: JSON.stringify(data_body)
     }
 
-    fetch(api, options)
+    fetch(apiUrl, options)
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
