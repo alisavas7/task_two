@@ -158,7 +158,9 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
     const options = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/type'
+            'Content-Type': 'application/type',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true
         },
         body: {
             flyer : flyer_banner
