@@ -154,33 +154,34 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     flyer_banner.appendChild(flyer);
 
     /* API request */
-    const api = 'http://localhost:8080/';
+    const apiUrl = 'http://localhost:8080/';
+    const data_body = {
+        data: flyer_banner, 
+    };
     const options = {
         method: 'POST',
         mode: 'no-cors',
         headers: {
-            'content-type': 'application/json',
+            'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true
         },
-        body: {
-            'flyer' : flyer_banner
-        }
+        body: JSON.stringify(data_body);
     }
+
     fetch(api, options)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Process the retrieved data
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('There was a problem fetching the data:', error);
-      });
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Data sent successfully:', data);
+        })
+        .catch(error => {
+          console.error('There was a problem sending the data:', error);
+        });
 
 }
 
