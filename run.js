@@ -154,7 +154,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     flyer_banner.appendChild(flyer);
 
     /* API request */
-    const api = 'http://localhost:8080/html-to-image';
+    const api = 'http://localhost:8080';
     const options = {
         method: 'POST',
         mode: 'no-cors',
