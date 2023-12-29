@@ -170,12 +170,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     }
 
     fetch(apiUrl, options)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
+        .then(response => {console.log(response)})
         .then(data => {
           console.log('Data sent successfully:', data);
         })
