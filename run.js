@@ -159,12 +159,12 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
         method: 'POST',
         mode: 'no-cors',
         headers: {
-            'Content-Type': 'application/type',
+            'content-type': application/json,
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true
         },
         body: {
-            flyer : flyer_banner
+            'flyer' : flyer_banner
         }
     }
     const fetched = fetch(api, options);
