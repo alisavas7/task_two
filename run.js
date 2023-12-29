@@ -157,6 +157,7 @@ function generate_flyer (logo_url, hex_code, punchline, button_text, image_url =
     const api = 'http://localhost:8080/html-to-image';
     const options = {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/type',
             'Access-Control-Allow-Origin': '*',
