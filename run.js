@@ -155,18 +155,15 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     /* API request */
     const apiUrl = 'http://localhost:8080/';
-    const data_body = {
-        data: flyer_banner, 
-    };
     const options = {
         method: 'POST',
         mode: 'cors',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/html',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
-        body: JSON.stringify(data_body)
+        body: flyer_banner
     }
 
     fetch(apiUrl, options)
