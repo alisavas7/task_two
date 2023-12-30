@@ -162,6 +162,9 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     //const new_window = window.open();
     //new_window.document.write(flyer_html);
     /* API request */
+    const inputs = {
+        'flyer_html' : flyer_html
+    };
     const apiUrl = 'http://localhost:8080/';
     const options = {
         method: 'POST',
@@ -171,9 +174,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
-        body: {
-            'flyer_html' : flyer_html
-        }
+        body: JSON.stringify(inputs)
     };
 
     fetch(apiUrl, options)
