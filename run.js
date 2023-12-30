@@ -152,8 +152,21 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
-    const flyer_html = `<html><head><style>${head.innerHTML}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
-    console.log(flyer_html);
+    const btn_text = `.button-text {text-align: center; font-family: calibri; color: white;}`;
+    const logo_outside = `.logo-outside {padding-top: 0.75rem; padding-bottom: 0.75em;}`;
+    const logo_inside = `.logo-inside {width:100px; height:100px; margin-left: auto; margin-right: auto; display: block;}`;
+    const gen_image_outside = `.gen-image-outside {width: 400px; height: 400px; padding: 10px; margin: auto; display: block;}`;
+    const gen_image_inside = `.gen-image {width: 100%; height: 100%; border-radius: 25%;}`;
+    const fs = `${flyer_style}
+    ${pl_style}
+    ${btn_stlye}
+    ${btn_text}
+    ${logo_outside}
+    ${logo_inside}
+    ${gen_image_outside}
+    ${gen_image_inside}`;
+    //const flyer_html = `<html><head><style>${head.innerHTML}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
+    console.log(fs);
     /* API request 
     const apiUrl = 'http://localhost:8080/';
     const options = {
