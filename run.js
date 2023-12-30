@@ -159,7 +159,9 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     const gen_image_inside_style = `.gen-image {width: 100%; height: 100%; border-radius: 25%;}`;
     const fs = `${flyer_style} ${pl_style} ${btn_style} ${btn_text} ${logo_outside_style} ${logo_inside_style} ${gen_image_outside_style} ${gen_image_inside_style}`;
     const flyer_html = `<!DOCTYPE html><html><head><style>${fs}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
-    window.open(flyer_html);
+    
+    const dataUrl = 'data:text/html,' + encodeURIComponent(flyer_html);
+    const newWindow = window.open(dataUrl, '_blank');
     /* API request 
     const apiUrl = 'http://localhost:8080/';
     const options = {
