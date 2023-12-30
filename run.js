@@ -159,7 +159,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         method: 'POST',
         mode: 'cors',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/html',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
@@ -168,7 +168,9 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     fetch(apiUrl, options)
         .then(response => {
-            console.log(response);
+            if(!response.ok){
+                throw new Error('Network response was not ok.');
+            };
         })
         .then(data => {
           console.log('Data sent successfully:', data);
