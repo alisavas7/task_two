@@ -170,7 +170,10 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     }
 
     fetch(apiUrl, options)
-        .then(response => {console.log(response)})
+        .then(response => {
+            console.log(response.status)
+            console.log(response.ok);
+        })
         .then(data => {
           console.log('Data sent successfully:', data);
         })
