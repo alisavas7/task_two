@@ -152,7 +152,8 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
-    const flyer_html = `<html><head><style>${head}</style></head><body>${flyer_banner.innerHTML}</body></html>`
+    const flyer_html = `<html><head><style>${head}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
+    console.log(flyer_html);
     /* API request 
     const apiUrl = 'http://localhost:8080/';
     const options = {
