@@ -152,10 +152,8 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
-
-    /* API request */
-    const flyer_html = `<html><body> ${flyer_banner.innerHTML} </body></html>`
-    console.log(flyer_html);
+    const png = html2canvas();
+    /* API request 
     const apiUrl = 'http://localhost:8080/';
     const options = {
         method: 'POST',
@@ -179,7 +177,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         })
         .catch(error => {
           console.error('There was a problem sending the data:', error);
-        });
+        });*/
 
 }
 
