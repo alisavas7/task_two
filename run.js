@@ -164,7 +164,8 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'Access-Control-Allow-Credentials': true,
         },
         body: flyer_banner
-    }
+    };
+    console.log(options.body);
 
     fetch(apiUrl, options)
         .then(response => {
