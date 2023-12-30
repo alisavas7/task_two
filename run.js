@@ -172,7 +172,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         method: 'POST',
         mode: 'cors',
         headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/octet-stream',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
