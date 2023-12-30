@@ -163,7 +163,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
-        body: JSON.serialize(flyer_banner);
+        body: JSON.serialize(flyer_banner)
     };
 
     fetch(apiUrl, options)
