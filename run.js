@@ -159,7 +159,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     const gen_image_inside_style = `.gen-image {width: 100%; height: 100%; border-radius: 25%;}`;
     const fs = `${flyer_style}
     ${pl_style}
-    ${btn_stlye}
+    ${btn_style}
     ${btn_text}
     ${logo_outside_style}
     ${logo_inside_style}
