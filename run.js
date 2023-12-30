@@ -161,7 +161,6 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     const flyer_inner = `<head><style>${fs}</style></head><body>${flyer_banner.innerHTML}</body>`;
     const flyer_html = document.createElement('html');
     flyer_html.innerHTML = flyer_inner;
-    console.log(typeof flyer_html);
     
     /* API request */
     const inputs = {
@@ -176,7 +175,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
-        body: JSON.stringify(inputs)
+        body: inputs
     };
     fetch(apiUrl, options)
         .then(response => {
