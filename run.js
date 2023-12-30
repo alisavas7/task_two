@@ -160,7 +160,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     };
     const options = {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
