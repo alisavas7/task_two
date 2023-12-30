@@ -164,7 +164,8 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Credentials': true
+            'Access-Control-Allow-Credentials': true,
+            'X-Content-Type-Options', 'nosniff'
         },
         body: JSON.stringify(data_body)
     }
