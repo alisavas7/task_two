@@ -159,17 +159,16 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         method: 'POST',
         mode: 'cors',
         headers: {
-            'Content-Type': 'text/html',
+            'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Credentials': true,
         },
-        body: flyer_banner
+        body: JSON.serialize(flyer_banner);
     };
-    console.log(options.body);
 
     fetch(apiUrl, options)
         .then(response => {
-            console.log(options.body);
+            console.log(response);
         })
         .then(data => {
           console.log('Data sent successfully:', data);
