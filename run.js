@@ -158,9 +158,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     const gen_image_outside_style = `.gen-image-outside {width: 400px; height: 400px; padding: 10px; margin: auto; display: block;}`;
     const gen_image_inside_style = `.gen-image {width: 100%; height: 100%; border-radius: 25%;}`;
     const fs = `${flyer_style} ${pl_style} ${btn_style} ${btn_text} ${logo_outside_style} ${logo_inside_style} ${gen_image_outside_style} ${gen_image_inside_style}`;
-    const flyer_inner = `<head><style>${fs}</style></head><body>${flyer_banner.innerHTML}</body>`;
-    const flyer_html = document.createElement('html');
-    flyer_html.innerHTML = flyer_inner;
+    const flyer_html = `<html><head><style>${fs}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
     
     /* API request */
     const inputs = {
