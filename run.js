@@ -165,8 +165,38 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
     const gen_image_inside_style = `.gen-image {width: 100%; height: 100%; border-radius: 25%;}`;
     const fs = `${flyer_style} ${pl_style} ${btn_style} ${btn_text} ${logo_outside_style} ${logo_inside_style} ${gen_image_outside_style} ${gen_image_inside_style}`;
     const flyer_html = `<html id='flyer_html'><head><style>${fs}</style></head><body>${flyer_banner.innerHTML}</body></html>`;
-    
-    /* API request */
+
+    const json = {
+        html: flyer_banner.innerHTML,
+        css: fs
+    };
+
+    const username = "b784e1c8-1ee0-489f-bc03-80e916f9b3af";
+    const password = "fd31b3ef-4ec7-47df-954f-62171e72c98e";
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(json),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Basic ' + btoa(username + ":" + password)
+      }
+    }
+
+    fetch('https://hcti.io/v1/image', options)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(res.status);
+        }
+      })
+      .then(data => {
+        // Image URL is available here
+        console.log(data.url)
+      })
+      .catch(err => console.error(err));
+    /* API request
     const inputs = {
         'flyer_html' : flyer_html
     };
@@ -192,7 +222,7 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
         })
         .catch(error => {
           console.error('There was a problem sending the data:', error);
-        });
+        });*/
 
 }
 
