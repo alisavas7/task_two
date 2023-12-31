@@ -152,6 +152,12 @@ async function generate_flyer (logo_url, hex_code, punchline, button_text, image
 
     head.appendChild(style);
     flyer_banner.appendChild(flyer);
+    const owner = flyer.ownerDocument;
+    const dom = owner.documentElement;
+
+    console.log(owner);
+    console.log(dom);
+    
     const btn_text = `.button-text {text-align: center; font-family: calibri; color: white;}`;
     const logo_outside_style = `.logo-outside {padding-top: 0.75rem; padding-bottom: 0.75em;}`;
     const logo_inside_style = `.logo-inside {width:100px; height:100px; margin-left: auto; margin-right: auto; display: block;}`;
